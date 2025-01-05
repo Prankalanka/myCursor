@@ -1,5 +1,8 @@
 package com.example.mycursor
 
+import android.accessibilityservice.AccessibilityService
+import android.view.accessibility.AccessibilityEvent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -31,4 +34,12 @@ class MainActivity : AppCompatActivity() {
             System.loadLibrary("mycursor")
         }
     }
+}
+
+class MyCursorService : AccessibilityService() {
+
+    override fun onInterrupt() {}
+
+    override fun onAccessibilityEvent(event: AccessibilityEvent?) {}
+
 }
